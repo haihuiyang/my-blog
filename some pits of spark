@@ -1,0 +1,75 @@
+submit a jar file:
+/Users/yanghaihui/tools/spark-2.0.1-bin-hadoop2.7/bin/spark-submit --class com.yhh.spark.App \
+    --master local \
+    /Users/yanghaihui/project/github/code/spark/target/sparkTest-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+
+sql example:
+Exception in thread "main" java.sql.SQLException: No suitable driver
+	at java.sql.DriverManager.getDriver(DriverManager.java:315)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$$anonfun$2.apply(JdbcUtils.scala:54)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$$anonfun$2.apply(JdbcUtils.scala:54)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.createConnectionFactory(JdbcUtils.scala:53)
+	at org.apache.spark.sql.execution.datasources.jdbc.JDBCRDD$.resolveTable(JDBCRDD.scala:123)
+	at org.apache.spark.sql.execution.datasources.jdbc.JDBCRelation.<init>(JDBCRelation.scala:117)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:53)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:330)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:149)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:122)
+	at com.yhh.spark.App$.main(App.scala:56)
+	at com.yhh.spark.App.main(App.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.SparkSubmit$.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:736)
+	at org.apache.spark.deploy.SparkSubmit$.doRunMain$1(SparkSubmit.scala:185)
+	at org.apache.spark.deploy.SparkSubmit$.submit(SparkSubmit.scala:210)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:124)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+
+after adding this:
+.option("driver", "com.mysql.jdbc.Driver")
+
+sql example:
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+
+
+Only one SparkContext may be running in this JVM (see SPARK-2243). To ignore this error, set spark.driver.allowMultipleContexts = true.
+
+
+SparkContext:
+    Main entry point for Spark functionality. A SparkContext represents the connection to a Spark cluster, and can be used to create RDDs, accumulators and broadcast variables on that cluster.
+
+    Only one SparkContext may be active per JVM. You must stop() the active SparkContext before creating a new one. This limitation may eventually be removed;
+
+
+
+
+
+
+
+register a func:
+
+val df_without_na = df.na.drop.withColumn("col1", expr("col_name1"))
+
+spark.udf.register("divide", (num1: Double, num2: Double) => (if(num2 != 0) num1/num2 else Double.NAN))
+val df_joined = spark.sql("select col1, col2, divide(col3, col4) as col3 from test")
+
+collect a list:
+
+import org.apache.spark.sql.expressions.Window
+import org.apache.spark.sql.functions._
+
+val wSpec = Window.partitionBy("symbol").orderBy("tradingDate").rowsBetween(-13, 0)
+val df_with_list = df.withColumn("col1_list", collect_list(df("col1")).over(wSpec))
+
+
+import scala.collection.mutable.WrappedArray
+
+spark.udf.register("calculate_list", (valueList: WrappedArray[Double]) => {
+    val a = valueList.filter(x => x >0).sum
+    val b = -1 * valueList.filter(x => x <0).sum
+    a + b
+})
