@@ -4,26 +4,35 @@
 	List必须按照插入的顺序保存元素，Set不能有重复元素。
 
 ### ***List(subInterface)***           
-####*1.ArrayList*
+####*1.ArrayList*(基于索引的动态数组)
 	
-- 实现了可变大小的数组（每次扩容后的*capacity*约为原*capacity*的1.5倍），允许**null**值，底层使用数组保存所有元素，所以随机访问很快，可以直接通过元素的下标值获取元素的值，但插入和删除较慢，因为需要移动*array*里的元素，未实现同步
+- 实现了**可变大小**的数组，允许所有元素，包括**null**值，底层使用数组(**array**)保存所有元素，所以随机访问很快，可以直接通过元素的下标值获取元素的值（***size, isEmpty, get, set, iterator, listIterator***这些方法的时间复杂度均为**O(1)**），但插入和删除较慢，因为需要移动*array*里的元素(即***add, remove***的时间复杂度为**O(n)**)，未实现同步
 
 
-- *ArrayList*默认的初始化容量非常小(10),底层实现为*array*，当对其添加大量数据时就必须改变*ArrayList*的*size*(一为原*size*的1.5倍)，而这种*resize*的*cost*是很大的，所以如果你知道你需要对*ArrayList*添加大量元素时最好给一个大一点的size
+- 每一个*ArrayList*实例都有一个容量(***capacity***)，使用**Lists.newArrayList()**创建的是一个**capacity为0**的List，当在添加第一个元素的时候会扩展到默认的初始化容量(**10**)，当对其添加的数据大于它的***capacity***就必须改变*ArrayList*的***capacity***(一般是原来大小的1.5倍)，而这种***resize***操作是有开销的，所以如果你知道数组的大小为actualSize，可以按照下面的方式初始化一个大小固定的ArrayList，以减去resaze的开销：
+
+	```java
+	int actualSize = 100;
+	List<Object> objectArrayList = Lists.newArrayListWithCapacity(actualSize);
+	```
+
+- ***iterator()和listIterator(int)***返回的迭代器是快速失败(**fail-fast**)的：
+
+	如果在迭代器创建之后，原始的List被修改了，迭代器会抛一个`ConcurrentModificationException`，原因是Iterator里的`expectedModCount`和List的`modCount`不一致导致的。在迭代的时候如果需要修改List，只能通过Iterator的remove方法修改
 
 
 - *Create ArrayList from array*
 				
 
-```java
-Object[] array = new Object[10];
-List<Object> arrayList1 = new ArrayList<>(Arrays.asList(array));
-List<Object> arrayList2 = Arrays.asList(array);
-//Arrays.asList(array)返回的是一个fixed size array，如果不用new ArrayList<>(Arrays.asList(array))包装起来的话，对它进行add或remove操作就会报java.lang.UnsupportedOperationException
-```
+	```java
+	Object[] array = new Object[10];
+	List<Object> arrayList1 = Lists.newArrayList(Arrays.asList(array));
+	List<Object> arrayList2 = Arrays.asList(array);
+	//需要注意的是：Arrays.asList(array)返回的是一个fixed size array(上面的arrayList2)，如果不用Lists.newArrayList(Arrays.asList(array))(上面的arrayList2)包装起来的话，对它进行add或remove操作就会报java.lang.UnsupportedOperationException
+	```
 
        
-####*2.LinkedList*       
+####*2.LinkedList*(双链表数据结构)  
 
    - 实现了*List*接口，允许**null**值，底层使用链表保存所有元素(除了要存数据外，还需存**next**和**pre**两个*pointer*，因此占用的内存比*ArrayList*多)，因此，向*LinkedList*里面插入或移除元素时会特别快，但是对于随机访问方面相对较慢（需要遍历链表），无同步，想要实现同步可以这样：
 
@@ -125,4 +134,5 @@ List<Object> arrayList2 = Arrays.asList(array);
 参考链接：			
 1.[Create ArrayList from array](http://stackoverflow.com/questions/157944/create-arraylist-from-array)			
 2.[When to use LinkedList over ArrayList?](http://stackoverflow.com/questions/322715/when-to-use-linkedlist-over-arraylist#comment22926624_7671021)			
-3.[java中的容器讲解](http://blog.csdn.net/wwww1988600/article/details/8646191)
+3.[java中的容器讲解](http://blog.csdn.net/wwww1988600/article/details/8646191)    
+4.[Java ArrayList resize costs](https://codinginthetrenches.com/2014/09/10/java-arraylist-resize-costs/)
