@@ -1,5 +1,5 @@
 
-#### Java 集合工具类 Collections 的介绍：
+#### java 集合工具类 Collections 的介绍：
 
 ---
 
