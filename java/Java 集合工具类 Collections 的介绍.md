@@ -1,3 +1,4 @@
+
 #### Java 集合工具类 Collections 的介绍：
 
 ---
@@ -100,4 +101,4 @@
 
 参考资料：
 
-（1）[https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)
+（1）[https://docs.oracle.com/javase/7/docs/api/java/util/Collections.html](https://docs.oracle.com/javase/7/docs/api/java/util/Collections.html)
