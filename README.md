@@ -27,3 +27,4 @@
 21. [全新服务器搭建Jenkins＋Docker＋Gradle＋Nodejs环境以实现自动化部署](https://github.com/haihuiyang/summaries/blob/master/java/%E5%85%A8%E6%96%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAJenkins%EF%BC%8BDocker%EF%BC%8BGradle%EF%BC%8BNodejs%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2.md)
 22. [读《 ScalaTest 》有感](https://github.com/haihuiyang/summaries/blob/master/scala/%E8%AF%BB%20%E3%80%8AScalaTest%E3%80%8B%20%E6%9C%89%E6%84%9F.md)
 23. [关于数据库可变长字符串类型长度设计问题：慷慨是不明智的](https://github.com/haihuiyang/summaries/blob/master/mysql/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%AF%E5%8F%98%E9%95%BF%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E9%95%BF%E5%BA%A6%E8%AE%BE%E8%AE%A1%E9%97%AE%E9%A2%98%EF%BC%9A%E6%85%B7%E6%85%A8%E6%98%AF%E4%B8%8D%E6%98%8E%E6%99%BA%E7%9A%84.md)
+24. [你真的了解 String 吗？](https://github.com/haihuiyang/summaries/blob/master/java/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BA%86%E8%A7%A3%20String%20%E5%90%97%EF%BC%9F.md)
