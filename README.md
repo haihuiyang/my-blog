@@ -30,3 +30,4 @@
 24. [你真的了解 String 吗？](https://github.com/haihuiyang/summaries/blob/master/java/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BA%86%E8%A7%A3%20String%20%E5%90%97%EF%BC%9F.md)
 25. [JMH----微基准测试框架学习笔记](https://github.com/haihuiyang/summaries/blob/master/java/JMH----%E5%BE%AE%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
 26. [Java 多线程学习（1）一些容易被遗忘的基础概念](https://github.com/haihuiyang/summaries/blob/ec4959aa083b02598a1bbd56c4d11f25a4072bc3/java/Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E4%B8%80%E4%BA%9B%E5%AE%B9%E6%98%93%E8%A2%AB%E9%81%97%E5%BF%98%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5.md)
+27. [技术小白是如何慢慢成长起来的 | 2019 与我的技术之路](https://github.com/haihuiyang/summaries/blob/master/java/%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%99%BD%E6%98%AF%E5%A6%82%E4%BD%95%E6%85%A2%E6%85%A2%E6%88%90%E9%95%BF%E8%B5%B7%E6%9D%A5%E7%9A%84%20%7C%202019%20%E4%B8%8E%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B9%8B%E8%B7%AF.md)
