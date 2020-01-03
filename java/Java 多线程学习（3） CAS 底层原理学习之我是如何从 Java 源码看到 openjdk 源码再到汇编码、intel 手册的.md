@@ -1,5 +1,3 @@
-
-
 本来是准备阅读 j.u.c 包下 ConcurrentHashMap 的底层源码，理解 ConcurrentHashMap 的实现原理的，看了一点点发现里面用到了很多 CAS。并且 atomic 和 locks 这两个包中也大量使用了 CAS，所以就先把 CAS 的原理搞清楚了之后再继续后面的内容。
 
 看了一大堆文章，也是把它弄懂了。令我没想到的是，自己竟然从 Java 源码看到 openjdk 源码及汇编码，最后还看了一些 intel 手册的内容，最终不仅学会了 CAS，还学到了许多其他的知识。
@@ -109,7 +107,7 @@ inline jint     Atomic::cmpxchg    (jint     exchange_value, volatile jint*     
 > - [intel IA32 手册](https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-3a-part-1-manual.pdf) 中 8.1 LOCKED ATOMIC OPERATIONS 关于 lock 前缀的含义：
 > 	- 保证原子操作
 > 	- 总线锁定，通过使用 LOCK＃ 信号和 LOCK 指令前缀
->	- 高速缓存一致性协议，确保可以对高速缓存的数据结构执行原子操作（缓存锁定）
+> 	- 高速缓存一致性协议，确保可以对高速缓存的数据结构执行原子操作（缓存锁定）
 > - lock 指令前缀也具有禁止指令重排序作用：可以通过阅读 [intel IA32 手册](https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-3a-part-1-manual.pdf)中 8.2.2 Memory Ordering in P6 and More Recent Processor Families 和 8.2.3 Examples Illustrating the Memory-Ordering Principles 两节的内容得出。
 
 看到这里，CAS 的底层实现原理也就很显然了，实际上就是：`lock cmpxchg`
@@ -118,13 +116,13 @@ inline jint     Atomic::cmpxchg    (jint     exchange_value, volatile jint*     
 
 > 关于 `lock cmpxchg` 的一些个人理解：由于 `lock` 指令前缀会锁定总线（或者是缓存锁定），所以在该 CPU 执行时总线是处于独占状态，该 CPU 通过总线广播一条 `read invalidate` 信息，通过高速缓存一致性协议（MESI），将其余 CPU 中该数据的 Cache 置为 `invalid` 状态（如果存在该数据的 Cache ），从而获得了对该数据的独占权，之后再执行 `cmpxchg` 原子操作指令修改该数据，完成对数据的修改。
 
-### 3、一些思考和疑问
+#### 3、一些思考和疑问
 
 ##### （1）既然 CAS 具有 volatile 的读和写的内存语义，那为什么还需要把变量声明成 volatile 呢？
 
 volatile 的读和写的内存语义其实是通过 lock 指令前缀实现的，如图：
 
-![volatile putfield](https://img-blog.csdnimg.cn/20200101013007630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![volatile putfield](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b6e60936c9?w=1436&h=878&f=png&s=330296)
 
 而 CAS 在系统是多核处理器时也会添加 lock 指令前缀，这两个不就是重复了吗？
 
@@ -197,7 +195,7 @@ ABA 问题可能带来的问题是什么呢？换句话说，`a -> b -> a` 这�
 
 
 
-### 5、结语
+#### 6、结语
 
 
 学 CAS ，最后学到的知识有：
@@ -209,7 +207,7 @@ ABA 问题可能带来的问题是什么呢？换句话说，`a -> b -> a` 这�
 - lock 指令的作用
 
 - 内存屏障
- 
+
 - 如何反汇编 Java 字节码
 
 - 以及一些工具的使用
@@ -225,4 +223,4 @@ ABA 问题可能带来的问题是什么呢？换句话说，`a -> b -> a` 这�
 
 （3）[Why Memory Barriers？中文翻译（上）](http://www.wowotech.net/kernel_synchronization/Why-Memory-Barriers.html)
 
-（4）[intel IA32 手册 8.1、8.2、8.3节](https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-3a-part-1-manual.pdf)
+（4）[intel IA32 手册 8.1、8.2、8.3节](https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-3a-part-1-manual.pdf)https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-3a-part-1-manual.pdf)
