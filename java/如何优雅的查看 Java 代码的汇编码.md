@@ -80,21 +80,21 @@ LD_LIBRARY_PATH=/Users/HappyFeet/tools/hsdis
 
 配置如下图所示：
 
-![IEDA 配置](https://img-blog.csdnimg.cn/20191231225159986.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![IEDA 配置](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b69e9cbbb4?w=1992&h=898&f=jpeg&s=235819)
 
 执行 `VolatileTest#main` 函数，然后就可以在 `/var/log` 得到 `hotspot.log` 文件，里面就是汇编日志，包含了代码的汇编码。
 
 ```bash
 ➜  ~ ll /var/log | grep hotspot.log
--rw-r--r--   1 yanghaihui       staff             133K Dec 31 22:32 hotspot.log
+-rw-r--r--   1 HappyFeet       staff             133K Dec 31 22:32 hotspot.log
 ➜  ~
 ```
 
 使用 sublime text 2 打开，大致是这样子的，分别对应于 `increase` 和 `decrease` 方法：
 
-![increase](https://img-blog.csdnimg.cn/20191231225608349.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![increase](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b69e980ba3?w=1610&h=368&f=jpeg&s=161490)
 
-![decrease](https://img-blog.csdnimg.cn/2019123122565048.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![decrease](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b6a674ffe9?w=1614&h=384&f=jpeg&s=163676)
 
 直接用 sublime text 2 打开上面的 `hotspot.log` 文件查看汇编码还是挺难受的，那么有没有更优雅的方式呢？
 
@@ -150,7 +150,7 @@ BUILD FAILED in 1m 42s
 
 成功之后会自动弹出这样一个界面，恭喜你，可以开始耍 jitwatch 了。
 
-![jitwatch-1](https://img-blog.csdnimg.cn/20191231231346169.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![jitwatch-1](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b6a36dd76f?w=2046&h=1154&f=jpeg&s=192696)
 
 （3）启动
 
@@ -160,15 +160,15 @@ BUILD FAILED in 1m 42s
 
 （1）配置生成 `hotspot.log` 日志的 java 文件所在的 `src` 文件目录和 `class` 文件目录
 
-![jitwatch 配置](https://img-blog.csdnimg.cn/20200101005544316.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![jitwatch 配置](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b6a130e194?w=2048&h=1144&f=jpeg&s=384421)
 
 （2）配置完成之后，点击 Open Log 按钮，选中 `hotspot.log` 文件，然后点击 Start 按钮，如果配置正确的话，会得到如下结果：
 
-![jitwatch 成功-1](https://img-blog.csdnimg.cn/20200101005852172.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![jitwatch 成功-1](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b6a73d5752?w=2048&h=1144&f=jpeg&s=342198)
 
 点击 increase() ，就可以看到
 
-![jitwatch 成功-2](https://img-blog.csdnimg.cn/20200101010431208.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![jitwatch 成功-2](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b6da8a0b85?w=2048&h=1144&f=jpeg&s=534910)
 
  左边是 Java 代码，中间是字节码，最右边是汇编码，这样看起来就方便多了。
 
@@ -190,11 +190,11 @@ Sandbox 的作用呢就是直接运行代码里面的 main 函数，然后根据
 
 ##### 结语：学个 CAS 底层实现原理（[CAS 底层原理学习之我是如何从 Java 源码看到 openjdk 源码再到汇编码、intel 手册的](https://blog.csdn.net/haihui_yang/article/details/103739482)），竟然还能扯到汇编，我也是挺佩服自己的！
 
-##### 最后放两张图，展示有 volatile 修饰和没有 volatile 修饰的变量赋值的区别：
+##### 最后放两张图，展示有 volatile 修饰和普通变量赋值的区别：
 
-![volatile putfield](https://img-blog.csdnimg.cn/20200101013007630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![volatile putfield](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b6e60936c9?w=1436&h=878&f=png&s=330296)
 
-![non volatile putfield](https://img-blog.csdnimg.cn/20200101013029406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+![non volatile putfield](https://user-gold-cdn.xitu.io/2020/1/1/16f5d0b6e04e3e62?w=1436&h=878&f=png&s=318338)
 
 ```
 0x000000010fea8c14: lock addl $0x0,(%rsp)  ;*putfield volatileCount
