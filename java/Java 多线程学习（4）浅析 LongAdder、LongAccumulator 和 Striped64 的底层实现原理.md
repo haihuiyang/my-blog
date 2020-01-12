@@ -35,6 +35,8 @@ transient volatile Cell[] cells;
 
 	>这里可以想一下如果出现哈希冲突，会是一个什么样的情况？
 
+![LongAdder 在高并发情况下执行示意图](https://img-blog.csdnimg.cn/20200107201130164.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhaWh1aV95YW5n,size_16,color_FFFFFF,t_70)
+
 下面我们来看看 LongAdder 的核心实现逻辑：LongAdder 中的 add 方法和Striped64 中的 longAccumulate 方法。
 
 （1）LongAdder 中的 add 方法
