@@ -7,7 +7,53 @@
 HotSpot 虚拟机的对象头包括以下信息：
 
 ###### "Mark Word"：
-存储对象自身的运行时数据，如：哈希码 ( HashCode ) 、GC 分代年龄、锁状态标志、线程持有的锁、偏向线程 ID 、偏向时间戳等。这部分数据的长度在 32 位和 64 位的虚拟机中分别为 32 bit 和 64 bit 。
+存储对象自身的运行时数据，如：哈希码 ( HashCode ) 、GC 分代年龄、锁状态标志、线程持有的锁、偏向线程 ID 、偏向时间戳等。这部分数据的长度在 32 位和 64 位的虚拟机中分别为 32 bit 和 64 bit 。如图：
+
+![HotSpot 虚拟机对象头 Mark Word](https://tva1.sinaimg.cn/large/0082zybpgy1gbp02vpxpxj319w0bggnf.jpg)
+
+不过仅仅只看这个很容易看的懵逼，好在 HotSpot 虚拟机 markOop.cpp 中有很好的注释，以 64 位为例：
+
+```c++
+// The markOop describes the header of an object.
+//  ...
+//  64 bits:
+//  --------
+//  unused:25 hash:31 -->| unused:1   age:4    biased_lock:1 lock:2 (normal object)
+//  JavaThread*:54 epoch:2 unused:1   age:4    biased_lock:1 lock:2 (biased object)
+//  PromotedObject*:61 --------------------->| promo_bits:3 ----->| (CMS promoted object)
+//  size:64 ----------------------------------------------------->| (CMS free block)
+//
+//  unused:25 hash:31 -->| cms_free:1 age:4    biased_lock:1 lock:2 (COOPs && normal object)
+//  JavaThread*:54 epoch:2 cms_free:1 age:4    biased_lock:1 lock:2 (COOPs && biased object)
+//  narrowOop:32 unused:24 cms_free:1 unused:4 promo_bits:3 ----->| (COOPs && CMS promoted object)
+//  unused:21 size:35 -->| cms_free:1 unused:7 ------------------>| (COOPs && CMS free block)
+//	...
+//
+//    [JavaThread* | epoch | age | 1 | 01]       lock is biased toward given thread
+//    [0           | epoch | age | 1 | 01]       lock is anonymously biased
+//
+//  - the two lock bits are used to describe three states: locked/unlocked and monitor.
+//
+//    [ptr             | 00]  locked             ptr points to real header on stack
+//    [header      | 0 | 01]  unlocked           regular object header
+//    [ptr             | 10]  monitor            inflated lock (header is wapped out)
+//    [ptr             | 11]  marked             used by markSweep to mark an object
+//                                               not valid at any other time
+//
+//    We assume that stack/thread pointers have the lowest two bits cleared.
+```
+
+[点击查看完整注释](http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/file/9ce27f0a4683/src/share/vm/oops/markOop.hpp#l30)
+
+将表格与注释一起阅读，明显要容易理解的多，花了一些时间，画了下面一张彩色的图帮助理解：
+
+![HotSpot 虚拟机对象头 Mark Word](https://tva1.sinaimg.cn/large/0082zybpgy1gbp8gsq0n9j30xg0jktd0.jpg)
+
+Mark Word 处于不同的状态，其数据结构也是不同的，这种非固定的数据结构是为了在极小的空间内存储尽量多的信息。
+
+例如：当 lock 为 01，biased_lock 为 1 时，Mark Word 处于可偏向状态。此时，前 54 bit 存的是偏向线程 ID，紧接着 2 bit 为偏向时间戳，1 bit 未使用，4 bit 为对象分代年龄；
+
+> 当 Mark Word 处于可偏向状态时，偏向线程 ID 为零代表的是匿名偏向锁。
 
 ###### "Klass"：
 类型指针，指向该对象的类元数据 ( 方法区 ) 的指针，虚拟机通过该指针来确定这个对象属于哪个类。这部分数据的长度在 32 位和 64 位的虚拟机中分别为 32 bit 和 64 bit ( 如果开启了指针压缩则为 4 bytes )。
@@ -176,7 +222,7 @@ output:
 
 参考资料：
 
-（1）《深入理解java虚拟机》周志明 著.
+（1）《深入理解java虚拟机》第二版 周志明 著.
 
 （2）[Primitive Data Types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
 
