@@ -101,14 +101,14 @@ public String(char value[], int offset, int count) {
 **Java 8 下大小为：64 bytes**
 
  （1）String 对象本身：24 bytes
- 
+
  - 对象头：Mark Word(8) + 类型指针(4)
  - hash(4)
  - value[] 引用(4)
  - 对齐填充(4)
 
  （2）value[] 字符串：40 bytes
- 
+
  - 对象头：Mark Word(8) + 类型指针(4) + 数组长度(4)
  - "Hello World"：**`char length(2)`** * array length(11)
  - 对齐填充(2) 
@@ -117,7 +117,7 @@ public String(char value[], int offset, int count) {
 **Java 9 下的大小为：56 bytes**
 
  （1）String 对象本身：24 bytes
- 
+
  - 对象头：Mark Word(8) + 类型指针(4)
  - hash(4)
  - **`coder(1)`**
@@ -125,7 +125,7 @@ public String(char value[], int offset, int count) {
  - value[] 引用(4)
 
  （2）value[] 字符串：32 bytes
- 
+
  - 对象头：Mark Word(8) + 类型指针(4) + 数组长度(4)
  - "Hello World"：**`byte length(1)`** * array length(11)
  - 对齐填充(5) 
@@ -474,7 +474,7 @@ oop StringTable::intern(Handle string_or_null, jchar* name,
 调用 `intern()` 方法时，会先去 `the_table()` 中找，如果找到就直接返回；否则将其加至 `the_table()` 中并返回。
 
 
-##### 结语：原本以为写一个 String 相关的博客会很简单，不会有太多的文字，谁知道写着写着居然写了这么多，每次快要停笔的时候突然又发现新的知识点。写的时候，可能是因为自己是处女座的吧，写了改，改了删，删了写，想尽自己最大的努力用最简单的语言把想说的表达出来，可是总感觉有些地方不到位。其实在刚开始写的时候很多地方都下不了笔，因为理解不够透彻，很多问题都答不上来，没办法下笔；于是就开始搜索资料，看各位大佬分享的关于 String 的心得和体会，找到的知识点也多了起来，虽然说这些不一定是最全的关于 String 的只是，但比起写之前对于 String 的理解是要强太多了。
+##### 结语：原本以为写一个 String 相关的博客会很简单，不会有太多的文字，谁知道写着写着居然写了这么多，每次快要停笔的时候突然又发现新的知识点。写的时候，可能是因为自己是处女座的吧，写了改，改了删，删了写，想尽自己最大的努力用最简单的语言把想说的表达出来，可是总感觉有些地方不到位。其实在刚开始写的时候很多地方都下不了笔，因为理解不够透彻，很多问题都答不上来，没办法下笔；于是就开始搜索资料，看各位大佬分享的关于 String 的心得和体会，找到的知识点也多了起来，虽然说这些不一定是最全的关于 String 的知识，但比起写之前对于 String 的理解是要强太多了。
 
 最后，送一句话给自己，也送给大家：**每天再忙也应该给自己留点成长的时间！**
 
