@@ -543,7 +543,7 @@ void ObjectSynchronizer::fast_enter(Handle obj, BasicLock* lock, bool attempt_re
 
 这个方法做的事情就是获取偏向锁。点进去一看，又是一大块代码。。。而且还不是很容易理解。。。
 
-参考 《深入理解 JVM 虚拟机》这本书和战小狼的这篇博客 [JVM源码分析之synchronized实现](https://www.jianshu.com/p/c5058b6fe8e5) 加以理解，大致逻辑为：
+参考 《深入理解 Java 虚拟机》这本书和战小狼的这篇博客 [JVM源码分析之synchronized实现](https://www.jianshu.com/p/c5058b6fe8e5) 加以理解，大致逻辑为：
 
 （a）获取锁对象的对象头中的 Mark Word，判断是不是可偏向状态；
 
