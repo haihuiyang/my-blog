@@ -1,41 +1,16 @@
-### I will write some summaries here!
-
 ### 博客地址：[HappyFeet的博客](https://me.csdn.net/haihui_yang)
 
-#### Table of Contents
+#### 目录
 
-1. [java static关键字的用法](https://github.com/haihuiyang/summaries/blob/master/java/java%20static%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95.md)
-2. [深入理解 ArrayList、LinkedList、HashSet 等 Java 容器](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20ArrayList%E3%80%81LinkedList%E3%80%81HashSet%20%E7%AD%89%20Java%20%E5%AE%B9%E5%99%A8.md)
-3. [深入理解Java虚拟机之----虚拟机类加载机制](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B----%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6.md)
-4. [java中类和对象的初始化](https://github.com/haihuiyang/summaries/blob/master/java/java%E4%B8%AD%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96.md)
-5. [深入理解Java虚拟机之----类文件结构](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B----%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.md)
-6. [深入理解Map，HashMap，LinkedHashMap，TreeMap等](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Map%EF%BC%8CHashMap%EF%BC%8CLinkedHashMap%EF%BC%8CTreeMap%E7%AD%89.md)
-7. [关于 BigDecimal 的使用](https://github.com/haihuiyang/summaries/blob/master/java/%E5%85%B3%E4%BA%8E%20BigDecimal%20%E7%9A%84%E4%BD%BF%E7%94%A8.md)
-8. [深入理解Java虚拟机之----运行时数据区域](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B----%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md)
-9. [深入理解Java虚拟机之----垃圾收集器与内存分配策略](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B----%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E4%B8%8E%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5.md)
-10. [重载 ( Overloading ) 和重写 ( Overriding ) 的区别](https://github.com/haihuiyang/summaries/blob/master/java/%E9%87%8D%E8%BD%BD%20(%20Overloading%20)%20%E5%92%8C%E9%87%8D%E5%86%99%20(%20Overriding%20)%20%E7%9A%84%E5%8C%BA%E5%88%AB.md)
-11. [深入理解Java虚拟机之----对象的内存布局](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B----%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80.md)
-12. [深入理解Java虚拟机之----熟悉语法糖背后的真相](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B----%E7%86%9F%E6%82%89%E8%AF%AD%E6%B3%95%E7%B3%96%E8%83%8C%E5%90%8E%E7%9A%84%E7%9C%9F%E7%9B%B8.md)
-13. [深入理解Java虚拟机之----Java内存模型](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B----Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md)
-14. [深入理解Java虚拟机之----volatile关键字](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B----volatile%E5%85%B3%E9%94%AE%E5%AD%97.md)
-15. [深入理解Java虚拟机之----双亲委派模型](https://github.com/haihuiyang/summaries/blob/master/java/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B----%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B.md)
-16. [对于写博客的一些看法及体会之----一个有梦想程序猿的自述](https://github.com/haihuiyang/summaries/blob/master/java/%E5%AF%B9%E4%BA%8E%E5%86%99%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95%E5%8F%8A%E4%BD%93%E4%BC%9A%E4%B9%8B----%E4%B8%80%E4%B8%AA%E6%9C%89%E6%A2%A6%E6%83%B3%E7%A8%8B%E5%BA%8F%E7%8C%BF%E7%9A%84%E8%87%AA%E8%BF%B0.md)
-17. [java 集合工具类 Collections 的介绍](https://github.com/haihuiyang/summaries/blob/master/java/Java%20%E9%9B%86%E5%90%88%E5%B7%A5%E5%85%B7%E7%B1%BB%20Collections%20%E7%9A%84%E4%BB%8B%E7%BB%8D.md)
-18. [懒人 git 配置----为一些常用的 git 命令设置别名](https://github.com/haihuiyang/summaries/blob/master/java/%E6%87%92%E4%BA%BA%20git%20%E9%85%8D%E7%BD%AE----%E4%B8%BA%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%20git%20%E5%91%BD%E4%BB%A4%E8%AE%BE%E7%BD%AE%E5%88%AB%E5%90%8D.md)
-19. [SpringBoot 多数据源配置](https://github.com/haihuiyang/summaries/blob/master/java/SpringBoot%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E9%85%8D%E7%BD%AE.md)
-20. [SpringBoot 如何使用 MessageSource 实现国际化](https://github.com/haihuiyang/summaries/blob/master/java/SpringBoot%20%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20MessageSource%20%E5%AE%9E%E7%8E%B0%E5%9B%BD%E9%99%85%E5%8C%96.md)
-21. [全新服务器搭建Jenkins＋Docker＋Gradle＋Nodejs环境以实现自动化部署](https://github.com/haihuiyang/summaries/blob/master/java/%E5%85%A8%E6%96%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAJenkins%EF%BC%8BDocker%EF%BC%8BGradle%EF%BC%8BNodejs%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2.md)
-22. [读《 ScalaTest 》有感](https://github.com/haihuiyang/summaries/blob/master/scala/%E8%AF%BB%20%E3%80%8AScalaTest%E3%80%8B%20%E6%9C%89%E6%84%9F.md)
-23. [关于数据库可变长字符串类型长度设计问题：慷慨是不明智的](https://github.com/haihuiyang/summaries/blob/master/mysql/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%AF%E5%8F%98%E9%95%BF%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E9%95%BF%E5%BA%A6%E8%AE%BE%E8%AE%A1%E9%97%AE%E9%A2%98%EF%BC%9A%E6%85%B7%E6%85%A8%E6%98%AF%E4%B8%8D%E6%98%8E%E6%99%BA%E7%9A%84.md)
-24. [你真的了解 String 吗？](https://github.com/haihuiyang/summaries/blob/master/java/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BA%86%E8%A7%A3%20String%20%E5%90%97%EF%BC%9F.md)
-25. [JMH----微基准测试框架学习笔记](https://github.com/haihuiyang/summaries/blob/master/java/JMH----%E5%BE%AE%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
-26. [Java 多线程学习（1）一些容易被遗忘的基础概念](https://github.com/haihuiyang/summaries/blob/ec4959aa083b02598a1bbd56c4d11f25a4072bc3/java/Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E4%B8%80%E4%BA%9B%E5%AE%B9%E6%98%93%E8%A2%AB%E9%81%97%E5%BF%98%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5.md)
-27. [技术小白是如何慢慢成长起来的 | 2019 与我的技术之路](https://github.com/haihuiyang/summaries/blob/master/java/%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%99%BD%E6%98%AF%E5%A6%82%E4%BD%95%E6%85%A2%E6%85%A2%E6%88%90%E9%95%BF%E8%B5%B7%E6%9D%A5%E7%9A%84%20%7C%202019%20%E4%B8%8E%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B9%8B%E8%B7%AF.md)
-28. [别再使用 POI 框架啦！（记一次生产应用频繁出现 OOM 事故的排查过程）](https://github.com/haihuiyang/summaries/blob/master/java/%E5%88%AB%E5%86%8D%E4%BD%BF%E7%94%A8%20POI%20%E6%A1%86%E6%9E%B6%E5%95%A6%EF%BC%81%EF%BC%88%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%94%9F%E4%BA%A7%E5%BA%94%E7%94%A8%E9%A2%91%E7%B9%81%E5%87%BA%E7%8E%B0%20OOM%20%E4%BA%8B%E6%95%85%E7%9A%84%E6%8E%92%E6%9F%A5%E8%BF%87%E7%A8%8B%EF%BC%89.md)
-29. [如何优雅的查看 Java 代码的汇编码](https://github.com/haihuiyang/summaries/blob/master/java/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E6%9F%A5%E7%9C%8B%20Java%20%E4%BB%A3%E7%A0%81%E7%9A%84%E6%B1%87%E7%BC%96%E7%A0%81.md)
-30. [Java 多线程学习（2）什么是乐观锁和悲观锁？](https://github.com/haihuiyang/summaries/blob/master/java/Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E4%BB%80%E4%B9%88%E6%98%AF%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81%EF%BC%9F.md)
-31. [Java 多线程学习（3） CAS 底层原理学习之我是如何从 Java 源码看到 openjdk 源码再到汇编码、intel 手册的](https://github.com/haihuiyang/summaries/blob/master/java/Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%883%EF%BC%89%20CAS%20%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E4%BB%8E%20Java%20%E6%BA%90%E7%A0%81%E7%9C%8B%E5%88%B0%20openjdk%20%E6%BA%90%E7%A0%81%E5%86%8D%E5%88%B0%E6%B1%87%E7%BC%96%E7%A0%81%E3%80%81intel%20%E6%89%8B%E5%86%8C%E7%9A%84.md)
-32. [Java 多线程学习（4）浅析 LongAdder、LongAccumulator 和 Striped64 的底层实现原理](https://github.com/haihuiyang/summaries/blob/master/java/Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%884%EF%BC%89%E6%B5%85%E6%9E%90%20LongAdder%E3%80%81LongAccumulator%20%E5%92%8C%20Striped64%20%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.md)
-33. [2020 对自己好一点之新 Mac Book Pro 环境的安装](https://github.com/haihuiyang/summaries/blob/master/java/2020%20%E5%AF%B9%E8%87%AA%E5%B7%B1%E5%A5%BD%E4%B8%80%E7%82%B9%E4%B9%8B%E6%96%B0%20Mac%20Book%20Pro%20%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%89%E8%A3%85.md)
-34. [Java 多线程学习（5）画一张漂亮的图帮助理解 Java 线程的状态转换](https://github.com/haihuiyang/summaries/blob/master/java/Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%885%EF%BC%89%E7%94%BB%E4%B8%80%E5%BC%A0%E6%BC%82%E4%BA%AE%E7%9A%84%E5%9B%BE%E5%B8%AE%E5%8A%A9%E7%90%86%E8%A7%A3%20Java%20%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2.md)
-35. [Java 多线程学习（6）synchronized 的成神之路](https://github.com/haihuiyang/summaries/blob/master/java/Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%886%EF%BC%89synchronized%20%E7%9A%84%E6%88%90%E7%A5%9E%E4%B9%8B%E8%B7%AF.md)
+---
+
+- Java
+  - 基础
+  - JVM
+  - 多线程
+  - SpringBoot
+- Database
+- Scala
+- 随笔
+- Git
+
