@@ -60,7 +60,7 @@ MBP 是在 PDD 上买的，要问为什么，因为便宜！
 
 一个文件格式转换工具，个人觉得非常好用，支持各种格式相互转换。
 
-#### 10、[WPS Office](wps.com/phone-mac/)
+#### 10、[WPS Office](https://www.wps.com/phone-mac/)
 
 也是听说 WPS Office 目前功能也挺强大的，像脑图、流程图之类的都支持，也准备尝试一下。
 
