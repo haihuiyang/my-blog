@@ -470,7 +470,7 @@ JVM_END
 
 对应到 ObjectSynchronizer::notify 方法。
 
-##### （2）`synchronizer.cpp#ObjectSynchronizer::notify：`openjdk/hotspot/src/share/vm/runtime/synchronizer.cpp`
+##### （2）`synchronizer.cpp#ObjectSynchronizer::notify`：`openjdk/hotspot/src/share/vm/runtime/synchronizer.cpp`
 
 ```c++
 void ObjectSynchronizer::notify(Handle obj, TRAPS) {
